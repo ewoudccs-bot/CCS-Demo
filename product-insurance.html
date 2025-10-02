@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bad Apple Insurance - Fruit Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <div class="header-center">
+        <a href="index.html" class="logo" aria-label="Go to homepage">
+          <img
+            src="img/fruit-shop-logo.webp"
+            class="logo-img"
+            alt="Fruit Shop Logo"
+          />
+          <span class="products-text" style="text-align: center">
+            View Products
+          </span>
+        </a>
+        <nav role="navigation" aria-label="Main navigation">
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bundles.html">Bundles</a>
+            <a href="personality-quiz.html" class="quiz-link">🌟 Fruit Quiz</a>
+            <a href="subscription.html" class="subscription-link">🍎 Subscription</a>
+          </div>
+          <a
+            href="basket.html"
+            class="basket-link"
+            aria-label="View shopping basket"
+            style="position: relative"
+          >
+            <img
+              src="img/basket-icon.png"
+              class="basket-img"
+              alt="Shopping basket icon"
+            />
+            <span class="basket-text">View shopping basket</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" role="main">
+      <div class="content-box" style="text-align: center">
+        <div style="font-size: 4rem" role="img" aria-label="Shield emoji">
+          🛡️
+        </div>
+        <h1>Bad Apple Insurance</h1>
+        <div class="product-desc insurance-desc" aria-label="Product description">
+          <p>Protect yourself against receiving bad fruit! 🍎❌</p>
+          <p>Our comprehensive Bad Apple Insurance covers you against:</p>
+          <ul class="insurance-benefits">
+            <li>🐛 Worm-infested apples</li>
+            <li>🤢 Rotten or spoiled fruit</li>
+            <li>🥴 Bruised or damaged produce</li>
+            <li>😞 Disappointingly tasteless fruit</li>
+          </ul>
+          <p class="insurance-note">
+            <strong>Peace of mind guaranteed!</strong><br>
+            Add this insurance to your basket along with any fruit purchase.
+          </p>
+        </div>
+        <div style="margin-top: 1.2rem">
+          <button
+            id="addToBasket"
+            class="cart-action-btn insurance-btn"
+            aria-label="Add Bad Apple Insurance to basket"
+          >
+            Add Insurance to Basket
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="shop.js"></script>
+    <script>
+      document.getElementById("addToBasket").onclick = function () {
+        addToBasket("insurance");
+        // Show confirmation message
+        const button = document.getElementById("addToBasket");
+        const originalText = button.textContent;
+        button.textContent = "Insurance Added! ✓";
+        button.style.background = "linear-gradient(90deg, #4CAF50 0%, #45a049 100%)";
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.background = "";
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>

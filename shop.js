@@ -2,6 +2,7 @@ const PRODUCTS = {
   apple: { name: "Apple", emoji: "🍏" },
   banana: { name: "Banana", emoji: "🍌" },
   lemon: { name: "Lemon", emoji: "🍋" },
+  insurance: { name: "Bad Apple Insurance", emoji: "🛡️", type: "insurance", description: "Protect yourself against bad fruit!" },
 };
 
 const BUNDLES = {
@@ -76,7 +77,12 @@ function renderBasket() {
       const product = PRODUCTS[item];
       if (product) {
         const li = document.createElement("li");
-        li.innerHTML = `<span class='basket-emoji'>${product.emoji}</span> <span>${product.name}</span>`;
+        if (product.type === "insurance") {
+          li.innerHTML = `<span class='basket-emoji'>${product.emoji}</span> <span class="insurance-item">${product.name}</span>`;
+          li.classList.add("insurance-basket-item");
+        } else {
+          li.innerHTML = `<span class='basket-emoji'>${product.emoji}</span> <span>${product.name}</span>`;
+        }
         basketList.appendChild(li);
       }
     }
